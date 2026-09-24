@@ -1,0 +1,83 @@
+{
+  "nav": {
+    "brand": "JanYojana Portal",
+    "schemes": "Schemes",
+    "eligibility": "Check Eligibility",
+    "myApplications": "My Applications"
+  },
+  "footer": {
+    "about": "About",
+    "quickLinks": "Quick Links",
+    "contact": "Contact Us",
+    "home": "Home",
+    "schemes": "Schemes",
+    "support": "Support"
+  },
+  "home": {
+    "title": "Welcome to JanYojana Portal",
+    "subtitle": "Access government schemes easily",
+    "browseSchemes": "Browse Schemes",
+    "checkEligibility": "Check Eligibility",
+    "featuresTitle": "Key Features",
+    "feature1Title": "Search Schemes",
+    "feature1Text": "Find government schemes relevant to your needs quickly and easily.",
+    "feature2Title": "Check Eligibility",
+    "feature2Text": "Verify if you're eligible for specific government schemes.",
+    "feature3Title": "Track Applications",
+    "feature3Text": "Monitor your application status in real time.",
+    "ctaTitle": "Ready to Get Started?",
+    "ctaText": "Join thousands of rural citizens accessing government schemes",
+    "ctaButton": "Explore Schemes Now"
+  },
+  "schemes": {
+    "title": "Government Schemes",
+    "searchPlaceholder": "Search schemes...",
+    "allCategories": "All Categories",
+    "open": "Open",
+    "benefit": "Benefit",
+    "registration": "Registration",
+    "to": "to",
+    "lastDate": "Last Date",
+    "eligibility": "Eligibility",
+    "requiredDocuments": "Required Documents",
+    "officialWebsite": "Official Website",
+    "noResults": "No schemes found for your search. Try a different keyword or category.",
+    "viewDetails": "View Details"
+  },
+  "schemeCategories": {
+    "agriculture": "Agriculture",
+    "housing": "Housing",
+    "health": "Health",
+    "employment": "Employment",
+    "energy": "Energy",
+    "banking": "Banking",
+    "skillDevelopment": "Skill Development",
+    "business": "Business",
+    "pension": "Pension",
+    "education": "Education"
+  },
+  "applications": {
+    "title": "My Applications",
+    "loginMessage": "Please log in to view your applications",
+    "backHome": "Back to Home",
+    "submitted": "Submitted",
+    "viewDetails": "View Details",
+    "approved": "Approved",
+    "pending": "Pending"
+  },
+  "eligibility": {
+    "title": "Check Your Eligibility",
+    "age": "Age",
+    "income": "Annual Income (₹)",
+    "category": "Category",
+    "selectCategory": "Select Category",
+    "general": "General",
+    "sc": "SC",
+    "st": "ST",
+    "obc": "OBC",
+    "state": "State",
+    "checkButton": "Check Eligibility",
+    "eligibleTitle": "You are Eligible For:",
+    "notEligibleTitle": "Not Eligible For:"
+  }
+}

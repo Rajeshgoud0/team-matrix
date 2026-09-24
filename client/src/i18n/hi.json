@@ -1,0 +1,83 @@
+{
+  "nav": {
+    "brand": "JanYojana पोर्टल",
+    "schemes": "योजनाएं",
+    "eligibility": "पात्रता जांचें",
+    "myApplications": "मेरी आवेदन"
+  },
+  "footer": {
+    "about": "हमारे बारे में",
+    "quickLinks": "तेज़ी से लिंक",
+    "contact": "हमसे संपर्क करें",
+    "home": "होम",
+    "schemes": "योजनाएं",
+    "support": "सहायता"
+  },
+  "home": {
+    "title": "JanYojana पोर्टल में आपका स्वागत है",
+    "subtitle": "सरकारी योजनाओं तक आसानी से पहुंचें",
+    "browseSchemes": "योजनाएं देखें",
+    "checkEligibility": "पात्रता जांचें",
+    "featuresTitle": "मुख्य विशेषताएं",
+    "feature1Title": "योजनाएं खोजें",
+    "feature1Text": "अपनी आवश्यकताओं के अनुरूप सरकारी योजनाएं जल्दी और आसानी से खोजें।",
+    "feature2Title": "पात्रता जांचें",
+    "feature2Text": "जांचें कि आप किसी विशेष सरकारी योजना के लिए पात्र हैं या नहीं।",
+    "feature3Title": "आवेदन ट्रैक करें",
+    "feature3Text": "अपने आवेदन की स्थिति वास्तविक समय में देखें।",
+    "ctaTitle": "शुरू करने के लिए तैयार हैं?",
+    "ctaText": "ग्राम वासियों को सरकारी योजनाओं तक पहुंचने में मदद करें",
+    "ctaButton": "अभी योजनाएं देखें"
+  },
+  "schemes": {
+    "title": "सरकारी योजनाएं",
+    "searchPlaceholder": "योजनाएं खोजें...",
+    "allCategories": "सभी श्रेणियां",
+    "open": "खुला",
+    "benefit": "लाभ",
+    "registration": "पंजीकरण",
+    "to": "से",
+    "lastDate": "अंतिम तारीख",
+    "eligibility": "पात्रता",
+    "requiredDocuments": "आवश्यक दस्तावेज़",
+    "officialWebsite": "अधिक जानकारी के लिए आधिकारिक वेबसाइट",
+    "noResults": "आपके खोज परिणाम में कोई योजना नहीं मिली। कोई अन्य कीवर्ड या श्रेणी आज़माएं।",
+    "viewDetails": "विवरण देखें"
+  },
+  "schemeCategories": {
+    "agriculture": "कृषि",
+    "housing": "आवास",
+    "health": "स्वास्थ्य",
+    "employment": "रोज़गार",
+    "energy": "ऊर्जा",
+    "banking": "बैंकिंग",
+    "skillDevelopment": "कौशल विकास",
+    "business": "व्यवसाय",
+    "pension": "पेंशन",
+    "education": "शिक्षा"
+  },
+  "applications": {
+    "title": "मेरे आवेदन",
+    "loginMessage": "अपने आवेदन देखने के लिए लॉग इन करें",
+    "backHome": "होम पर वापस जाएं",
+    "submitted": "सबमिट किया गया",
+    "viewDetails": "विवरण देखें",
+    "approved": "स्वीकृत",
+    "pending": "लंबित"
+  },
+  "eligibility": {
+    "title": "अपनी पात्रता जांचें",
+    "age": "आयु",
+    "income": "वार्षिक आय (₹)",
+    "category": "श्रेणी",
+    "selectCategory": "श्रेणी चुनें",
+    "general": "सामान्य",
+    "sc": "एससी",
+    "st": "एसटी",
+    "obc": "ओबीसी",
+    "state": "राज्य",
+    "checkButton": "पात्रता जांचें",
+    "eligibleTitle": "आप पात्र हैं:",
+    "notEligibleTitle": "आप पात्र नहीं हैं:"
+  }
+}

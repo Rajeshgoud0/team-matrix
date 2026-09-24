@@ -1,0 +1,26 @@
+{
+  "name": "janyojana-portal",
+  "version": "1.0.0",
+  "description": "Full-stack MERN web application for Rural Government Scheme Awareness",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "concurrently \"cd server && npm run dev\" \"cd client && npm start\"",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm start",
+    "install-all": "npm install && cd server && npm install && cd ../client && npm install"
+  },
+  "keywords": [
+    "government",
+    "schemes",
+    "rural",
+    "portal",
+    "mern",
+    "nodejs",
+    "react"
+  ],
+  "author": "Team Matrix",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
