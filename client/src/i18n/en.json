@@ -79,5 +79,35 @@
     "checkButton": "Check Eligibility",
     "eligibleTitle": "You are Eligible For:",
     "notEligibleTitle": "Not Eligible For:"
+  },
+  "schemeContent": {
+    "pmKisan": {
+      "name": "Pradhan Mantri Kisan Samman Nidhi",
+      "description": "Direct income support for eligible small and marginal farmers to support crop cultivation and household needs.",
+      "benefit": "₹6,000 per year in three equal installments",
+      "eligibility": "Small and marginal farmer families with cultivable land holdings.",
+      "documents": ["Aadhaar card", "Bank account details", "Land ownership records", "Farmer identity proof"],
+      "howToApply": ["Visit the PM-KISAN portal or your nearest Common Service Centre.", "Complete Aadhaar and land verification.", "Submit your bank account details and application.", "Track the application status using your registration number."]
+    }
+  },
+  "details": {
+    "backToSchemes": "Back to schemes",
+    "benefit": "Benefit",
+    "eligibility": "Eligibility",
+    "howToApply": "How to apply",
+    "documents": "Required documents",
+    "applyNow": "Apply with demo form",
+    "notFound": "Scheme not found."
+  },
+  "applicationForm": {
+    "title": "Demo application form",
+    "fullName": "Full name",
+    "mobile": "Mobile number",
+    "state": "State",
+    "aadhaar": "Aadhaar number",
+    "notes": "Additional information",
+    "submit": "Submit application",
+    "successTitle": "Application submitted successfully",
+    "successText": "This demo application has been recorded for preview. A real portal would now verify your documents and send an acknowledgement."
   }
 }

@@ -1,6 +1,27 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import { governmentSchemes } from '../data/schemes';
+
+const getSchemeContent = (scheme, t) => {
+  if (scheme.id === 1) {
+    return {
+      name: t('schemeContent.pmKisan.name'),
+      description: t('schemeContent.pmKisan.description'),
+      benefit: t('schemeContent.pmKisan.benefit'),
+      eligibility: t('schemeContent.pmKisan.eligibility'),
+      documents: t('schemeContent.pmKisan.documents', { returnObjects: true })
+    };
+  }
+
+  return {
+    name: scheme.name,
+    description: scheme.description,
+    benefit: scheme.benefit,
+    eligibility: scheme.eligibility,
+    documents: scheme.requiredDocuments
+  };
+};
 
 function SchemeDirectory() {
   const { t } = useTranslation();
@@ -23,11 +44,12 @@ function SchemeDirectory() {
   const categories = ['all', ...new Set(governmentSchemes.map((scheme) => scheme.category.toLowerCase()))];
 
   const filteredSchemes = governmentSchemes.filter((scheme) => {
+    const content = getSchemeContent(scheme, t);
     const matchesCategory =
       selectedCategory === 'all' || scheme.category.toLowerCase() === selectedCategory;
     const matchesSearch =
-      scheme.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      scheme.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      content.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      content.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
       scheme.category.toLowerCase().includes(searchTerm.toLowerCase());
 
     return matchesCategory && matchesSearch;
@@ -61,6 +83,9 @@ function SchemeDirectory() {
 
       <div className="space-y-5">
         {filteredSchemes.map((scheme) => (
+          (() => {
+            const content = getSchemeContent(scheme, t);
+            return (
           <div key={scheme.id} className="bg-white p-6 rounded shadow hover:shadow-lg transition border border-gray-100">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
               <div className="flex items-start gap-4">
@@ -68,7 +93,7 @@ function SchemeDirectory() {
                   {scheme.logo}
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-1">{scheme.name}</h3>
+                  <h3 className="text-xl font-bold mb-1">{content.name}</h3>
                   <p className="text-blue-600 font-semibold mb-2">
                     {categoryLookup[scheme.category.toLowerCase()] || scheme.category}
                   </p>
@@ -79,12 +104,12 @@ function SchemeDirectory() {
               </span>
             </div>
 
-            <p className="text-gray-700 mt-4 mb-4">{scheme.description}</p>
+            <p className="text-gray-700 mt-4 mb-4">{content.description}</p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-gray-700 mb-4">
               <div className="bg-gray-50 p-3 rounded">
                 <p className="font-semibold text-gray-800">{t('schemes.benefit')}</p>
-                <p>{scheme.benefit}</p>
+                <p>{content.benefit}</p>
               </div>
               <div className="bg-gray-50 p-3 rounded">
                 <p className="font-semibold text-gray-800">{t('schemes.registration')}</p>
@@ -98,13 +123,13 @@ function SchemeDirectory() {
 
             <div className="mb-4">
               <p className="font-semibold text-gray-800 mb-1">{t('schemes.eligibility')}</p>
-              <p className="text-gray-700">{scheme.eligibility}</p>
+              <p className="text-gray-700">{content.eligibility}</p>
             </div>
 
             <div className="mb-4">
               <p className="font-semibold text-gray-800 mb-2">{t('schemes.requiredDocuments')}</p>
               <div className="flex flex-wrap gap-2">
-                {scheme.requiredDocuments.map((doc) => (
+                {content.documents.map((doc) => (
                   <span key={doc} className="bg-blue-50 text-blue-700 px-2 py-1 rounded text-xs font-medium">
                     {doc}
                   </span>
@@ -121,11 +146,13 @@ function SchemeDirectory() {
               >
                 {t('schemes.officialWebsite')}
               </a>
-              <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+              <Link to={`/schemes/${scheme.id}`} className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
                 {t('schemes.viewDetails')}
-              </button>
+              </Link>
             </div>
           </div>
+            );
+          })()
         ))}
 
         {filteredSchemes.length === 0 && (
