@@ -19,7 +19,7 @@ function ApplicationForm() {
     <div className="container mx-auto py-12 px-4">
       <div className="bg-white p-6 md:p-10 rounded shadow max-w-2xl mx-auto">
         <h1 className="text-3xl font-bold mb-2">{t('applicationForm.title')}</h1>
-        <p className="text-gray-600 mb-6">{scheme.name}</p>
+        <p className="text-gray-600 mb-6">{t(`schemeNames.${scheme.id}`, scheme.name)}</p>
         <form onSubmit={(event) => { event.preventDefault(); setSubmitted(true); }} className="space-y-4">
           <label className="block"><span className="font-semibold">{t('applicationForm.fullName')}</span><input required className="w-full p-3 border rounded mt-1" /></label>
           <label className="block"><span className="font-semibold">{t('applicationForm.mobile')}</span><input required type="tel" className="w-full p-3 border rounded mt-1" /></label>

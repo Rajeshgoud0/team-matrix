@@ -24,24 +24,14 @@ function SchemeDetails() {
     return <div className="container mx-auto py-12 px-4">{t('details.notFound')}</div>;
   }
 
-  const isPmKisan = scheme.id === 1;
-  const content = isPmKisan
-    ? {
-        name: t('schemeContent.pmKisan.name'),
-        description: t('schemeContent.pmKisan.description'),
-        benefit: t('schemeContent.pmKisan.benefit'),
-        eligibility: t('schemeContent.pmKisan.eligibility'),
-        documents: t('schemeContent.pmKisan.documents', { returnObjects: true }),
-        howToApply: t('schemeContent.pmKisan.howToApply', { returnObjects: true })
-      }
-    : {
-        name: scheme.name,
-        description: scheme.description,
-        benefit: scheme.benefit,
-        eligibility: scheme.eligibility,
-        documents: scheme.requiredDocuments,
-        howToApply: [scheme.applicationMode]
-      };
+  const content = {
+    name: t(`schemeNames.${scheme.id}`, scheme.name),
+    description: t(`schemeTemplates.${scheme.category}.description`, scheme.description),
+    benefit: t(`schemeTemplates.${scheme.category}.benefit`, scheme.benefit),
+    eligibility: t(`schemeTemplates.${scheme.category}.eligibility`, scheme.eligibility),
+    documents: t('schemeTemplates.documents', { returnObjects: true }),
+    howToApply: t('schemeTemplates.howToApply', { returnObjects: true })
+  };
 
   return (
     <div className="container mx-auto py-12 px-4">

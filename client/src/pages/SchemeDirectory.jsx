@@ -4,22 +4,12 @@ import { Link } from 'react-router-dom';
 import { governmentSchemes } from '../data/schemes';
 
 const getSchemeContent = (scheme, t) => {
-  if (scheme.id === 1) {
-    return {
-      name: t('schemeContent.pmKisan.name'),
-      description: t('schemeContent.pmKisan.description'),
-      benefit: t('schemeContent.pmKisan.benefit'),
-      eligibility: t('schemeContent.pmKisan.eligibility'),
-      documents: t('schemeContent.pmKisan.documents', { returnObjects: true })
-    };
-  }
-
   return {
-    name: scheme.name,
-    description: scheme.description,
-    benefit: scheme.benefit,
-    eligibility: scheme.eligibility,
-    documents: scheme.requiredDocuments
+    name: t(`schemeNames.${scheme.id}`, scheme.name),
+    description: t(`schemeTemplates.${scheme.category}.description`, scheme.description),
+    benefit: t(`schemeTemplates.${scheme.category}.benefit`, scheme.benefit),
+    eligibility: t(`schemeTemplates.${scheme.category}.eligibility`, scheme.eligibility),
+    documents: t('schemeTemplates.documents', { returnObjects: true })
   };
 };
 
@@ -38,7 +28,10 @@ function SchemeDirectory() {
     'skill development': t('schemeCategories.skillDevelopment'),
     business: t('schemeCategories.business'),
     pension: t('schemeCategories.pension'),
-    education: t('schemeCategories.education')
+    education: t('schemeCategories.education'),
+    technology: t('schemeCategories.technology'),
+    'women & children': t('schemeCategories.womenChildren'),
+    infrastructure: t('schemeCategories.infrastructure')
   };
 
   const categories = ['all', ...new Set(governmentSchemes.map((scheme) => scheme.category.toLowerCase()))];

@@ -54,7 +54,10 @@
     "skillDevelopment": "Skill Development",
     "business": "Business",
     "pension": "Pension",
-    "education": "Education"
+    "education": "Education",
+    "technology": "Technology",
+    "womenChildren": "Women & Children",
+    "infrastructure": "Infrastructure"
   },
   "applications": {
     "title": "My Applications",
@@ -109,5 +112,9 @@
     "submit": "Submit application",
     "successTitle": "Application submitted successfully",
     "successText": "This demo application has been recorded for preview. A real portal would now verify your documents and send an acknowledgement."
+  },
+  "schemeTemplates": {
+    "documents": ["Aadhaar card", "Address proof", "Bank account details", "Income or eligibility proof"],
+    "howToApply": ["Visit the official portal or nearest service center.", "Complete eligibility and document verification.", "Submit the application and bank details.", "Track the application using the registration number."]
   }
 }
