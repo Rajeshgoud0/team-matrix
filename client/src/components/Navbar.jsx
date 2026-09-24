@@ -13,6 +13,9 @@ function Navbar({ isLoggedIn, onLanguageChange, currentLanguage }) {
         </Link>
 
         <div className="flex gap-6 items-center">
+          <Link to="/" className="hover:text-blue-200">
+            {t('nav.home')}
+          </Link>
           <Link to="/schemes" className="hover:text-blue-200">
             {t('nav.schemes')}
           </Link>

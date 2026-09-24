@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { governmentSchemes } from '../data/schemes';
 
 const getSchemeContent = (scheme, t) => {
@@ -15,6 +15,7 @@ const getSchemeContent = (scheme, t) => {
 
 function SchemeDirectory() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
 
@@ -50,6 +51,9 @@ function SchemeDirectory() {
 
   return (
     <div className="scheme-directory container mx-auto py-12 px-4">
+      <button type="button" onClick={() => navigate(-1)} className="text-blue-600 hover:underline mb-4">
+        {t('navigation.back')}
+      </button>
       <h1 className="text-4xl font-bold mb-8">{t('schemes.title')}</h1>
 
       <div className="bg-white p-6 rounded shadow mb-8">

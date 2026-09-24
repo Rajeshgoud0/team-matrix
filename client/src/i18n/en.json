@@ -1,9 +1,13 @@
 {
   "nav": {
     "brand": "JanYojana Portal",
+    "home": "Home",
     "schemes": "Schemes",
     "eligibility": "Check Eligibility",
     "myApplications": "My Applications"
+  },
+  "navigation": {
+    "back": "Back"
   },
   "footer": {
     "about": "About",

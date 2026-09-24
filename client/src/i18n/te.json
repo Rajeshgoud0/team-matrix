@@ -1,9 +1,13 @@
 {
   "nav": {
     "brand": "జనయోజన పోర్టల్",
+    "home": "హోమ్",
     "schemes": "పథకాలు",
     "eligibility": "అర్హతను తనిఖీ చేయండి",
     "myApplications": "నా అప్లికేషన్లు"
+  },
+  "navigation": {
+    "back": "వెనక్కి"
   },
   "footer": {
     "about": "గురించి",

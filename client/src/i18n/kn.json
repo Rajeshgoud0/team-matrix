@@ -1,9 +1,13 @@
 {
   "nav": {
     "brand": "ಜನಯೋಜನೆ ಪೋರ್ಟಲ್",
+    "home": "ಮನೆ",
     "schemes": "ಯೋಜನೆಗಳು",
     "eligibility": "ಅರ್ಹತೆ ಪರಿಶೀಲಿಸಿ",
     "myApplications": "ನನ್ನ ಅರ್ಜಿಗಳು"
+  },
+  "navigation": {
+    "back": "ಹಿಂದಕ್ಕೆ"
   },
   "footer": {
     "about": "ಬಗ್ಗೆ",

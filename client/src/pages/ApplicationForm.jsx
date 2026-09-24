@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { governmentSchemes } from '../data/schemes';
 
 function ApplicationForm() {
   const { t } = useTranslation();
   const { schemeId } = useParams();
+  const navigate = useNavigate();
   const scheme = governmentSchemes.find((item) => String(item.id) === schemeId);
   const [submitted, setSubmitted] = useState(false);
 
@@ -17,6 +18,7 @@ function ApplicationForm() {
 
   return (
     <div className="container mx-auto py-12 px-4">
+      <button type="button" onClick={() => navigate(-1)} className="text-blue-600 hover:underline mb-4">{t('navigation.back')}</button>
       <div className="bg-white p-6 md:p-10 rounded shadow max-w-2xl mx-auto">
         <h1 className="text-3xl font-bold mb-2">{t('applicationForm.title')}</h1>
         <p className="text-gray-600 mb-6">{t(`schemeNames.${scheme.id}`, scheme.name)}</p>

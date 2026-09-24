@@ -1,11 +1,12 @@
 import React from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { governmentSchemes } from '../data/schemes';
 
 function SchemeDetails() {
   const { t } = useTranslation();
   const { schemeId } = useParams();
+  const navigate = useNavigate();
   const scheme = governmentSchemes.find((item) => String(item.id) === schemeId);
   const categoryKeys = {
     Agriculture: 'agriculture',
@@ -35,6 +36,7 @@ function SchemeDetails() {
 
   return (
     <div className="container mx-auto py-12 px-4">
+      <button type="button" onClick={() => navigate(-1)} className="text-blue-600 hover:underline mr-4">{t('navigation.back')}</button>
       <Link to="/schemes" className="text-blue-600 hover:underline">{t('details.backToSchemes')}</Link>
       <div className="bg-white p-6 md:p-10 rounded shadow mt-4">
         <div className="flex items-start gap-4">

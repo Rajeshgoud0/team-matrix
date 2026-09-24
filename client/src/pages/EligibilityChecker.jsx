@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 function EligibilityChecker() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     age: '',
     income: '',
@@ -29,6 +31,7 @@ function EligibilityChecker() {
 
   return (
     <div className="eligibility-checker container mx-auto py-12 px-4">
+      <button type="button" onClick={() => navigate(-1)} className="text-blue-600 hover:underline mb-4">{t('navigation.back')}</button>
       <h1 className="text-4xl font-bold mb-8">{t('eligibility.title')}</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

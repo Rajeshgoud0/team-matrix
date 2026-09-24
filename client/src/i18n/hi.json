@@ -1,9 +1,13 @@
 {
   "nav": {
     "brand": "JanYojana पोर्टल",
+    "home": "होम",
     "schemes": "योजनाएं",
     "eligibility": "पात्रता जांचें",
     "myApplications": "मेरी आवेदन"
+  },
+  "navigation": {
+    "back": "वापस"
   },
   "footer": {
     "about": "हमारे बारे में",
