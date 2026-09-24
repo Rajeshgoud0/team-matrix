@@ -51,7 +51,7 @@ function SchemeDirectory() {
 
   return (
     <div className="scheme-directory container mx-auto py-12 px-4">
-      <button type="button" onClick={() => navigate(-1)} className="text-blue-600 hover:underline mb-4">
+      <button type="button" onClick={() => navigate(-1)} className="border border-blue-600 text-blue-600 px-4 py-2 rounded mb-4 hover:bg-blue-600 hover:text-white transition">
         {t('navigation.back')}
       </button>
       <h1 className="text-4xl font-bold mb-8">{t('schemes.title')}</h1>

@@ -36,7 +36,7 @@ function SchemeDetails() {
 
   return (
     <div className="container mx-auto py-12 px-4">
-      <button type="button" onClick={() => navigate(-1)} className="text-blue-600 hover:underline mr-4">{t('navigation.back')}</button>
+      <button type="button" onClick={() => navigate(-1)} className="border border-blue-600 text-blue-600 px-4 py-2 rounded mr-4 mb-4 hover:bg-blue-600 hover:text-white transition">{t('navigation.back')}</button>
       <Link to="/schemes" className="text-blue-600 hover:underline">{t('details.backToSchemes')}</Link>
       <div className="bg-white p-6 md:p-10 rounded shadow mt-4">
         <div className="flex items-start gap-4">

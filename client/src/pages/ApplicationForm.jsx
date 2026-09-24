@@ -18,7 +18,7 @@ function ApplicationForm() {
 
   return (
     <div className="container mx-auto py-12 px-4">
-      <button type="button" onClick={() => navigate(-1)} className="text-blue-600 hover:underline mb-4">{t('navigation.back')}</button>
+      <button type="button" onClick={() => navigate(-1)} className="border border-blue-600 text-blue-600 px-4 py-2 rounded mb-4 hover:bg-blue-600 hover:text-white transition">{t('navigation.back')}</button>
       <div className="bg-white p-6 md:p-10 rounded shadow max-w-2xl mx-auto">
         <h1 className="text-3xl font-bold mb-2">{t('applicationForm.title')}</h1>
         <p className="text-gray-600 mb-6">{t(`schemeNames.${scheme.id}`, scheme.name)}</p>
