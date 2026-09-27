@@ -17,7 +17,7 @@ JanYojana Portal is a full-stack MERN web application designed to help rural cit
   - `src/pages/` - Page-level components
   - `src/services/` - API service calls
   - `src/i18n/` - Language files
-  
+
 - `server/` - Node.js backend
   - `models/` - Mongoose schemas
   - `routes/` - API route definitions

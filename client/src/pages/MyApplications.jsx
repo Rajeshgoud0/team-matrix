@@ -8,15 +8,15 @@ function MyApplications({ isLoggedIn }) {
   const applications = [
     {
       id: 1,
-      scheme: 'Pradhan Mantri Kisan Samman Nidhi',
-      status: 'Approved',
+      scheme: t('schemeNames.1'),
+      statusKey: 'approved',
       submittedDate: '2026-02-15',
       statusColor: 'green'
     },
     {
       id: 2,
       scheme: 'NREGA',
-      status: 'Pending',
+      statusKey: 'pending',
       submittedDate: '2026-03-01',
       statusColor: 'yellow'
     }
@@ -57,7 +57,7 @@ function MyApplications({ isLoggedIn }) {
                   </p>
                 </div>
                 <span className={`px-4 py-2 rounded font-semibold ${statusClassName}`}>
-                  {app.status}
+                  {t(`applications.${app.statusKey}`)}
                 </span>
               </div>
               <button className="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">

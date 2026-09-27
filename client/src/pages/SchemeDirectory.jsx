@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useNavigate } from 'react-router-dom';
 import { governmentSchemes } from '../data/schemes';
+import SchemeArtwork from '../components/SchemeArtwork';
+import RegistrationDeadlineNotice from '../components/RegistrationDeadlineNotice';
 
 const getSchemeContent = (scheme, t) => {
   return {
@@ -86,14 +88,15 @@ function SchemeDirectory() {
           <div key={scheme.id} className="bg-white p-6 rounded shadow hover:shadow-lg transition border border-gray-100">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
               <div className="flex items-start gap-4">
-                <div className={`w-12 h-12 rounded-lg ${scheme.logoBg} text-white font-bold text-lg flex items-center justify-center`}>
-                  {scheme.logo}
+                <div className="w-12 h-12 rounded-lg overflow-hidden">
+                  <SchemeArtwork scheme={scheme} />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-1">{content.name}</h3>
                   <p className="text-blue-600 font-semibold mb-2">
                     {categoryLookup[scheme.category.toLowerCase()] || scheme.category}
                   </p>
+                  <RegistrationDeadlineNotice registrationEnd={scheme.registrationEnd} />
                 </div>
               </div>
               <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">

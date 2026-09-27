@@ -11,7 +11,7 @@ function Footer() {
           <div>
             <h4 className="font-bold mb-3">{t('footer.about')}</h4>
             <p className="text-gray-400">
-              JanYojana Portal helps rural citizens access government schemes.
+              {t('footer.description')}
             </p>
           </div>
           <div>
@@ -24,13 +24,13 @@ function Footer() {
           </div>
           <div>
             <h4 className="font-bold mb-3">{t('footer.contact')}</h4>
-            <p className="text-gray-400">Email: support@janyojana.gov.in</p>
-            <p className="text-gray-400">Phone: 1800-SCHEMES</p>
+            <p className="text-gray-400">{t('footer.email')}</p>
+            <p className="text-gray-400">{t('footer.phone')}</p>
           </div>
         </div>
         <hr className="my-6 border-gray-700" />
         <p className="text-center text-gray-400">
-          © 2026 JanYojana Portal. All rights reserved.
+          {t('footer.copyright')}
         </p>
       </div>
     </footer>

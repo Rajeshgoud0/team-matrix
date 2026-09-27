@@ -595,3 +595,690 @@ export const governmentSchemes = [
     officialWebsite: 'https://skillindia.gov.in'
   }
 ];
+
+const schemeProfiles = {
+  1: {
+    detailedDescription: 'PM-KISAN is a central sector scheme under the Ministry of Agriculture & Farmers Welfare that provides income support to eligible landholding farmer families. It is designed to help farmers meet agricultural and household expenses by providing direct cash benefits in three installments each year.',
+    howToApply: [
+      'Visit the official PM-KISAN portal and complete new farmer registration.',
+      'Upload Aadhaar-linked farmer details and land records.',
+      'Verify mobile number, bank account and eKYC status.',
+      'Track approval and installment status through the beneficiary dashboard.'
+    ],
+    officialFormUrl: 'https://pmkisan.gov.in/RegistrationFormupdated.aspx',
+    formFields: [
+      { name: 'farmerName', label: 'Farmer name', type: 'text', required: true },
+      { name: 'village', label: 'Village / tehsil', type: 'text', required: true },
+      { name: 'landholding', label: 'Landholding details', type: 'text', required: true },
+      { name: 'aadhaar', label: 'Aadhaar number', type: 'text', required: true },
+      { name: 'bankAccount', label: 'Bank account number / IFSC', type: 'text', required: true },
+      { name: 'mobile', label: 'Registered mobile number', type: 'tel', required: true },
+      { name: 'notes', label: 'Additional information', type: 'textarea', required: false }
+    ]
+  },
+  2: {
+    detailedDescription: 'PMAY-G provides assistance to rural households for construction or enhancement of pucca houses, with focus on women, scheduled castes, scheduled tribes, and economically weaker sections. The scheme promotes shelter security and improved rural housing standards.',
+    howToApply: [
+      'Check eligibility under PMAY-G at the Gram Panchayat or beneficiary list portal.',
+      'Submit the application with household and identity details.',
+      'Attach Aadhar, income and housing documents for verification.',
+      'Complete field verification before sanction and fund release.'
+    ],
+    officialFormUrl: 'https://pmayg.nic.in/',
+    formFields: [
+      { name: 'applicantName', label: 'Applicant name', type: 'text', required: true },
+      { name: 'familyHead', label: 'Family head name', type: 'text', required: true },
+      { name: 'village', label: 'Village / panchayat', type: 'text', required: true },
+      { name: 'housingStatus', label: 'Current housing status', type: 'select', required: true, options: ['No pucca house', 'Kutcha house', 'Semi-pucca house', 'Other'] },
+      { name: 'aadhaar', label: 'Aadhaar number', type: 'text', required: true },
+      { name: 'income', label: 'Annual household income', type: 'text', required: true },
+      { name: 'notes', label: 'Household details', type: 'textarea', required: false }
+    ]
+  },
+  3: {
+    detailedDescription: 'Ayushman Bharat PM-JAY is the largest health insurance scheme in India. It provides cashless secondary and tertiary hospitalization cover to eligible families and helps reduce catastrophic health expenditures in rural and vulnerable communities.',
+    howToApply: [
+      'Generate or verify the family’s Ayushman card through the ABHA / PM-JAY portal.',
+      'Submit family details with Aadhaar and ration card information.',
+      'Complete beneficiary verification at the common service center or hospital.',
+      'Use the card at empanelled hospitals for cashless treatment.'
+    ],
+    officialFormUrl: 'https://abha.gov.in/',
+    formFields: [
+      { name: 'familyHead', label: 'Family head name', type: 'text', required: true },
+      { name: 'state', label: 'State', type: 'text', required: true },
+      { name: 'district', label: 'District', type: 'text', required: true },
+      { name: 'rationCard', label: 'Ration card number', type: 'text', required: true },
+      { name: 'aadhaar', label: 'Aadhaar number', type: 'text', required: true },
+      { name: 'hospitalPreference', label: 'Preferred empanelled hospital', type: 'text', required: false },
+      { name: 'notes', label: 'Medical details / family details', type: 'textarea', required: false }
+    ]
+  },
+  4: {
+    detailedDescription: 'MGNREGA guarantees a minimum of 100 days of wage employment in a financial year to each rural household that volunteers for unskilled manual work. The scheme creates livelihood security and strengthens rural infrastructure through public works.',
+    howToApply: [
+      'Register at the Gram Panchayat or local job card office.',
+      'Submit identity, address and household details.',
+      'Receive a job card after verification.',
+      'Apply for work and receive wages through the wage payment system.'
+    ],
+    officialFormUrl: 'https://nrega.nic.in/',
+    formFields: [
+      { name: 'householdHead', label: 'Household head name', type: 'text', required: true },
+      { name: 'village', label: 'Village / worksite', type: 'text', required: true },
+      { name: 'jobCard', label: 'Job card number', type: 'text', required: false },
+      { name: 'aadhaar', label: 'Aadhaar number', type: 'text', required: true },
+      { name: 'category', label: 'Household category', type: 'select', required: true, options: ['SC', 'ST', 'OBC', 'General', 'Other'] },
+      { name: 'bankAccount', label: 'Bank / post office account details', type: 'text', required: true },
+      { name: 'notes', label: 'Work preference', type: 'textarea', required: false }
+    ]
+  },
+  5: {
+    detailedDescription: 'PM Ujjwala Yojana is aimed at providing clean cooking fuel to women from Below Poverty Line households by offering free LPG connections and subsidy support. It reduces indoor air pollution and improves health and safety in rural homes.',
+    howToApply: [
+      'Find the nearest LPG distributor or apply through the state portal.',
+      'Submit KYC and address documents for verification.',
+      'Book the free LPG connection and complete document check.',
+      'Activate the connection, receive cylinder and safety instructions.'
+    ],
+    officialFormUrl: 'https://pmuy.gov.in/',
+    formFields: [
+      { name: 'beneficiaryName', label: 'Women beneficiary name', type: 'text', required: true },
+      { name: 'husbandName', label: 'Husband / family head name', type: 'text', required: true },
+      { name: 'address', label: 'Residential address', type: 'textarea', required: true },
+      { name: 'aadhaar', label: 'Aadhaar number', type: 'text', required: true },
+      { name: 'rationCard', label: 'Ration card number', type: 'text', required: true },
+      { name: 'gasDistributor', label: 'Preferred LPG distributor', type: 'text', required: false },
+      { name: 'notes', label: 'Any additional family information', type: 'textarea', required: false }
+    ]
+  },
+  6: {
+    detailedDescription: 'PMJDY promotes financial inclusion by providing every eligible adult with access to a zero-balance basic savings account, accident insurance, digital banking access and RuPay debit card. It is a cornerstone of the government’s inclusive banking mission.',
+    howToApply: [
+      'Visit a participating bank branch or CSC.',
+      'Submit the account opening form and KYC documents.',
+      'Complete Aadhaar and address verification.',
+      'Activate the account and receive the RuPay debit card and benefits.'
+    ],
+    officialFormUrl: 'https://pmjdy.gov.in/files/forms/account-opening/English.pdf',
+    formFields: [
+      { name: 'accountHolder', label: 'Account holder name', type: 'text', required: true },
+      { name: 'fatherName', label: 'Father / husband name', type: 'text', required: true },
+      { name: 'aadhaar', label: 'Aadhaar number', type: 'text', required: true },
+      { name: 'address', label: 'Permanent address', type: 'textarea', required: true },
+      { name: 'bankBranch', label: 'Bank branch name', type: 'text', required: true },
+      { name: 'mobile', label: 'Mobile number', type: 'tel', required: true },
+      { name: 'notes', label: 'Additional KYC notes', type: 'textarea', required: false }
+    ]
+  },
+  7: {
+    detailedDescription: 'Pradhan Mantri Fasal Bima Yojana protects farmers against crop losses due to natural calamities, pests, disease and adverse weather conditions. It provides a transparent insurance process with settlement support and premium subsidy.',
+    howToApply: [
+      'Select the notified crop and village coverage on the agriculture portal.',
+      'Confirm land records and bank account details for enrollment.',
+      'Submit the crop insurance application through the bank or insurance channel.',
+      'Track claim status after seasonal loss or weather event.'
+    ],
+    officialFormUrl: 'https://pmfby.gov.in/',
+    formFields: [
+      { name: 'farmerName', label: 'Farmer name', type: 'text', required: true },
+      { name: 'village', label: 'Village / district', type: 'text', required: true },
+      { name: 'cropName', label: 'Crop insured', type: 'text', required: true },
+      { name: 'surveyNumber', label: 'Survey / land record number', type: 'text', required: true },
+      { name: 'aadhaar', label: 'Aadhaar number', type: 'text', required: true },
+      { name: 'bankAccount', label: 'Bank account number / IFSC', type: 'text', required: true },
+      { name: 'notes', label: 'Crop loss details', type: 'textarea', required: false }
+    ]
+  },
+  8: {
+    detailedDescription: 'PM Vishwakarma Yojana supports traditional artisans and craftsmen by providing toolkit support, margin money, skill training and digital support. It helps improve productivity and market competitiveness for local craft communities.',
+    howToApply: [
+      'Register at the official PM Vishwakarma portal or CSC.',
+      'Select the artisan category and provide caste or community proof.',
+      'Submit trade/occupation certificates and bank details.',
+      'Complete verification and receive training and benefits.'
+    ],
+    officialFormUrl: 'https://pmvishwakarma.gov.in/',
+    formFields: [
+      { name: 'artisanName', label: 'Artisan / craftsperson name', type: 'text', required: true },
+      { name: 'trade', label: 'Traditional trade', type: 'text', required: true },
+      { name: 'district', label: 'District / block', type: 'text', required: true },
+      { name: 'community', label: 'Community / caste proof', type: 'text', required: true },
+      { name: 'aadhaar', label: 'Aadhaar number', type: 'text', required: true },
+      { name: 'bankAccount', label: 'Bank account number / IFSC', type: 'text', required: true },
+      { name: 'notes', label: 'Trade and equipment details', type: 'textarea', required: false }
+    ]
+  },
+  9: {
+    detailedDescription: 'PM SVANidhi provides micro-credit support to street vendors and small informal workers to upgrade their businesses and access digital payment systems. It is aimed at vendor formalization and business revival.',
+    howToApply: [
+      'Register as a street vendor with local municipal or state authorities.',
+      'Submit vendor certification and Aadhaar details.',
+      'Apply online for the loan or working capital assistance.',
+      'Use the sanctioned amount for business expansion and repayment tracking.'
+    ],
+    officialFormUrl: 'https://svanidhi.mohua.gov.in/',
+    formFields: [
+      { name: 'vendorName', label: 'Street vendor name', type: 'text', required: true },
+      { name: 'vendorType', label: 'Vendor category', type: 'select', required: true, options: ['Food cart', 'Mobile vendor', 'Stationary shop', 'Other'] },
+      { name: 'market', label: 'Local market / area', type: 'text', required: true },
+      { name: 'aadhaar', label: 'Aadhaar number', type: 'text', required: true },
+      { name: 'certificate', label: 'Vendor certificate / ID', type: 'text', required: true },
+      { name: 'bankAccount', label: 'Bank account details', type: 'text', required: true },
+      { name: 'notes', label: 'Business details', type: 'textarea', required: false }
+    ]
+  },
+  10: {
+    detailedDescription: 'Stand-Up India supports women, SC and ST entrepreneurs by providing bank loan assistance for greenfield enterprises. The scheme promotes business ownership and social inclusion at the grassroots level.',
+    howToApply: [
+      'Visit a participating bank branch with your project plan.',
+      'Submit details under the Stand-Up India loan application process.',
+      'Attach Aadhaar, caste proof and business idea documents.',
+      'Complete bank appraisal and sanction once the project is approved.'
+    ],
+    officialFormUrl: 'https://www.standupmitra.in/',
+    formFields: [
+      { name: 'entrepreneurName', label: 'Applicant entrepreneur name', type: 'text', required: true },
+      { name: 'businessName', label: 'Proposed business name', type: 'text', required: true },
+      { name: 'businessType', label: 'Business sector', type: 'text', required: true },
+      { name: 'aadhaar', label: 'Aadhaar number', type: 'text', required: true },
+      { name: 'casteCertificate', label: 'Caste / community certificate', type: 'text', required: false },
+      { name: 'bankBranch', label: 'Preferred bank branch', type: 'text', required: true },
+      { name: 'notes', label: 'Business plan summary', type: 'textarea', required: false }
+    ]
+  },
+  11: {
+    detailedDescription: 'Mudra Yojana provides collateral-free loans to micro and small enterprises to support business expansion, working capital needs, and startup financing. It is designed for non-corporate small business owners in both urban and rural settings.',
+    howToApply: [
+      'Approach a Mudra lending partner or branch of a public/private bank.',
+      'Submit personal, business and financial details.',
+      'Choose the applicable Mudra loan category based on business need.',
+      'Track sanction and disbursal through the bank process.'
+    ],
+    officialFormUrl: 'https://www.mudra.org.in/',
+    formFields: [
+      { name: 'applicantName', label: 'Business owner name', type: 'text', required: true },
+      { name: 'businessType', label: 'Business type', type: 'text', required: true },
+      { name: 'turnover', label: 'Annual turnover / scale', type: 'text', required: true },
+      { name: 'aadhaar', label: 'Aadhaar number', type: 'text', required: true },
+      { name: 'bankAccount', label: 'Bank account details', type: 'text', required: true },
+      { name: 'loanPurpose', label: 'Loan purpose', type: 'text', required: true },
+      { name: 'notes', label: 'Business activity summary', type: 'textarea', required: false }
+    ]
+  },
+  12: {
+    detailedDescription: 'Atal Pension Yojana ensures dignified pension support for workers in the unorganized sector after retirement. It encourages regular contributions and financial planning for old age income security.',
+    howToApply: [
+      'Open an account with a participating bank or post office.',
+      'Submit age, Aadhaar and bank details.',
+      'Choose a pension amount between the allowed monthly options.',
+      'Continue regular contributions until retirement and receive pension after age 60.'
+    ],
+    officialFormUrl: 'https://www.npscra.nsdl.co.in/',
+    formFields: [
+      { name: 'subscriberName', label: 'Subscriber name', type: 'text', required: true },
+      { name: 'dob', label: 'Date of birth', type: 'date', required: true },
+      { name: 'aadhaar', label: 'Aadhaar number', type: 'text', required: true },
+      { name: 'bankAccount', label: 'Bank account number / IFSC', type: 'text', required: true },
+      { name: 'pensionOption', label: 'Monthly pension option', type: 'select', required: true, options: ['₹1,000', '₹2,000', '₹3,000', '₹4,000', '₹5,000'] },
+      { name: 'mobile', label: 'Mobile number', type: 'tel', required: true },
+      { name: 'notes', label: 'Nominee / family details', type: 'textarea', required: false }
+    ]
+  },
+  13: {
+    detailedDescription: 'Kisan Credit Card is a short-term credit facility for farmers to meet crop production and allied agriculture needs. It provides timely access to funds and supports working capital requirements without complicated procedures.',
+    howToApply: [
+      'Visit the bank or cooperative operating the KCC facility.',
+      'Submit land records, identity and crop details.',
+      'Apply for the credit limit under the KCC scheme.',
+      'Use the sanctioned credit for cultivation and allied agriculture activities.'
+    ],
+    officialFormUrl: 'https://www.rbi.org.in/',
+    formFields: [
+      { name: 'farmerName', label: 'Farmer name', type: 'text', required: true },
+      { name: 'landRecord', label: 'Land record / khata number', type: 'text', required: true },
+      { name: 'cropType', label: 'Main crop / activity', type: 'text', required: true },
+      { name: 'aadhaar', label: 'Aadhaar number', type: 'text', required: true },
+      { name: 'bankBranch', label: 'Bank / cooperative branch', type: 'text', required: true },
+      { name: 'bankAccount', label: 'Bank account details', type: 'text', required: true },
+      { name: 'notes', label: 'Farm activity details', type: 'textarea', required: false }
+    ]
+  },
+  14: {
+    detailedDescription: 'PM-KMY provides pension support to eligible small and marginal farmers after age 60. It aims to reduce old-age hardship and secure a stable income for farmers who are outside other pension schemes.',
+    howToApply: [
+      'Register through the official PM-KMY portal or nearest CSC.',
+      'Submit farmer identity, age and bank details for verification.',
+      'Choose the monthly contribution and nominee details.',
+      'Receive pension after the beneficiary reaches 60 years of age.'
+    ],
+    officialFormUrl: 'https://pmkmy.gov.in/',
+    formFields: [
+      { name: 'farmerName', label: 'Farmer name', type: 'text', required: true },
+      { name: 'dob', label: 'Date of birth', type: 'date', required: true },
+      { name: 'aadhaar', label: 'Aadhaar number', type: 'text', required: true },
+      { name: 'bankAccount', label: 'Bank account number / IFSC', type: 'text', required: true },
+      { name: 'village', label: 'Village / block', type: 'text', required: true },
+      { name: 'mobile', label: 'Mobile number', type: 'tel', required: true },
+      { name: 'notes', label: 'Nominee details', type: 'textarea', required: false }
+    ]
+  },
+  15: {
+    detailedDescription: 'The National Scholarship Portal consolidates information and applications for scholarships run by the central and state governments. It helps meritorious students from weaker economic backgrounds continue education without financial hurdles.',
+    howToApply: [
+      'Register on the National Scholarship Portal with academic details.',
+      'Select the relevant scholarship and category based on income and education.',
+      'Upload mark sheets, income certificate and bank details.',
+      'Track approval and scholarship disbursal status online.'
+    ],
+    officialFormUrl: 'https://scholarships.gov.in/',
+    formFields: [
+      { name: 'studentName', label: 'Student name', type: 'text', required: true },
+      { name: 'schoolName', label: 'School / college name', type: 'text', required: true },
+      { name: 'course', label: 'Course / class', type: 'text', required: true },
+      { name: 'aadhaar', label: 'Aadhaar number', type: 'text', required: true },
+      { name: 'incomeCertificate', label: 'Income certificate number', type: 'text', required: true },
+      { name: 'bankAccount', label: 'Bank account details', type: 'text', required: true },
+      { name: 'notes', label: 'Academic performance and scholarship category', type: 'textarea', required: false }
+    ]
+  },
+  16: {
+    detailedDescription: 'Pradhan Mantri Rozgar Yojana promotes self-employment and entrepreneurship for unemployed and educated youth. It supports training, business planning and subsidy-linked assistance for starting income-generating activities.',
+    howToApply: [
+      'Register at the district employment office or online portal.',
+      'Submit education, work and skill details.',
+      'Choose the self-employment project or business opportunity.',
+      'Get training and sanction support before launching the venture.'
+    ],
+    officialFormUrl: 'https://www.ddugjy.gov.in/',
+    formFields: [
+      { name: 'applicantName', label: 'Applicant name', type: 'text', required: true },
+      { name: 'qualification', label: 'Education / qualification', type: 'text', required: true },
+      { name: 'district', label: 'District / block', type: 'text', required: true },
+      { name: 'aadhaar', label: 'Aadhaar number', type: 'text', required: true },
+      { name: 'skill', label: 'Preferred skill / business area', type: 'text', required: true },
+      { name: 'bankAccount', label: 'Bank account details', type: 'text', required: true },
+      { name: 'notes', label: 'Training and employment background', type: 'textarea', required: false }
+    ]
+  },
+  17: {
+    detailedDescription: 'IGNOAPS provides monthly pension to elderly citizens below the poverty line to support social security and basic living needs. It is a key welfare intervention for senior citizens in rural and urban vulnerable communities.',
+    howToApply: [
+      'Apply through the district welfare office or village secretariat.',
+      'Submit age and income verification documents.',
+      'Complete beneficiary verification and bank details.',
+      'Receive pension through direct benefit transfer after approval.'
+    ],
+    officialFormUrl: 'https://nsap.nic.in/',
+    formFields: [
+      { name: 'beneficiaryName', label: 'Senior citizen name', type: 'text', required: true },
+      { name: 'dob', label: 'Date of birth', type: 'date', required: true },
+      { name: 'aadhaar', label: 'Aadhaar number', type: 'text', required: true },
+      { name: 'incomeCertificate', label: 'Income / BPL certificate', type: 'text', required: true },
+      { name: 'address', label: 'Address proof', type: 'textarea', required: true },
+      { name: 'bankAccount', label: 'Bank account details', type: 'text', required: true },
+      { name: 'notes', label: 'Family and nominee details', type: 'textarea', required: false }
+    ]
+  },
+  18: {
+    detailedDescription: 'PM-SYM provides pension benefits to workers in the unorganized sector after they reach 60 years of age. It targets those who do not have formal pension access and need a secure income for retirement years.',
+    howToApply: [
+      'Register online or at a CSC with personal and work details.',
+      'Submit age and occupational information.',
+      'Complete bank seeding and monthly contributions.',
+      'Get pension after retirement age with direct transfer.'
+    ],
+    officialFormUrl: 'https://maandhan.in/',
+    formFields: [
+      { name: 'workerName', label: 'Worker name', type: 'text', required: true },
+      { name: 'dob', label: 'Date of birth', type: 'date', required: true },
+      { name: 'occupation', label: 'Occupation / work type', type: 'text', required: true },
+      { name: 'aadhaar', label: 'Aadhaar number', type: 'text', required: true },
+      { name: 'bankAccount', label: 'Bank account number / IFSC', type: 'text', required: true },
+      { name: 'mobile', label: 'Mobile number', type: 'tel', required: true },
+      { name: 'notes', label: 'Nominee and family details', type: 'textarea', required: false }
+    ]
+  },
+  19: {
+    detailedDescription: 'Mission Indradhanush focuses on improving full immunization coverage among children and pregnant women, especially in underserved and low-coverage districts. It aims to reduce preventable child mortality and disease burden.',
+    howToApply: [
+      'Register at the local Anganwadi, PHC or vaccination session site.',
+      'Provide child and mother details for immunization tracking.',
+      'Schedule vaccination at approved health facilities.',
+      'Continue follow-up doses and record immunization completion.'
+    ],
+    officialFormUrl: 'https://www.mohfw.gov.in/',
+    formFields: [
+      { name: 'motherName', label: 'Mother name', type: 'text', required: true },
+      { name: 'childName', label: 'Child name', type: 'text', required: true },
+      { name: 'age', label: 'Child age', type: 'text', required: true },
+      { name: 'aadhaar', label: 'Mother Aadhaar number', type: 'text', required: true },
+      { name: 'village', label: 'Village / health center', type: 'text', required: true },
+      { name: 'vaccinationStatus', label: 'Vaccination status', type: 'select', required: true, options: ['Not started', 'Partially vaccinated', 'Due for vaccination', 'Completed'] },
+      { name: 'notes', label: 'Vaccination and health details', type: 'textarea', required: false }
+    ]
+  },
+  20: {
+    detailedDescription: 'Samagra Shiksha Abhiyan is a centrally sponsored education scheme that supports school quality, digital learning, inclusion and teacher capacity across states. It works to improve access and retention in schools, especially in underserved areas.',
+    howToApply: [
+      'Register through the school or district education office.',
+      'Submit student and school details for support programs.',
+      'Attach academic records and category documents if applicable.',
+      'Get school or scholarship support after verification.'
+    ],
+    officialFormUrl: 'https://samagrashiksha.in/',
+    formFields: [
+      { name: 'studentName', label: 'Student name', type: 'text', required: true },
+      { name: 'schoolName', label: 'School name', type: 'text', required: true },
+      { name: 'class', label: 'Class / grade', type: 'text', required: true },
+      { name: 'aadhaar', label: 'Aadhaar number', type: 'text', required: true },
+      { name: 'guardianName', label: 'Guardian name', type: 'text', required: true },
+      { name: 'category', label: 'Category', type: 'select', required: false, options: ['General', 'OBC', 'SC', 'ST', 'EWS'] },
+      { name: 'notes', label: 'Academic support needs', type: 'textarea', required: false }
+    ]
+  },
+  21: {
+    detailedDescription: 'PM POSHAN provides hot cooked meals to school children to improve nutrition, enrolment and attendance. It is one of the largest school meal programs and helps reduce classroom hunger among children in government schools.',
+    howToApply: [
+      'Register the child through the school nutrition program.',
+      'Submit student enrollment and identity information.',
+      'Complete school-level beneficiary verification.',
+      'Receive meals and monitor attendance through school records.'
+    ],
+    officialFormUrl: 'https://pm-poshan.education.gov.in/',
+    formFields: [
+      { name: 'studentName', label: 'Student name', type: 'text', required: true },
+      { name: 'schoolName', label: 'School name', type: 'text', required: true },
+      { name: 'class', label: 'Class / grade', type: 'text', required: true },
+      { name: 'aadhaar', label: 'Student Aadhaar number', type: 'text', required: true },
+      { name: 'guardianName', label: 'Parent / guardian name', type: 'text', required: true },
+      { name: 'address', label: 'Home address', type: 'textarea', required: true },
+      { name: 'notes', label: 'School meal support details', type: 'textarea', required: false }
+    ]
+  },
+  22: {
+    detailedDescription: 'Digital India Programme helps villages and citizens access digital services, literacy and online public services. It improves digital infrastructure, e-governance and connectivity for better public participation and outreach.',
+    howToApply: [
+      'Register through CSC, digital kiosk or the official digital portal.',
+      'Submit citizen identity and connectivity requirements.',
+      'Complete digital literacy or service registration.',
+      'Access digital public services and government platforms.'
+    ],
+    officialFormUrl: 'https://digitalindia.gov.in/',
+    formFields: [
+      { name: 'citizenName', label: 'Applicant name', type: 'text', required: true },
+      { name: 'village', label: 'Village / district', type: 'text', required: true },
+      { name: 'serviceType', label: 'Required digital service', type: 'text', required: true },
+      { name: 'aadhaar', label: 'Aadhaar number', type: 'text', required: true },
+      { name: 'mobile', label: 'Mobile number', type: 'tel', required: true },
+      { name: 'serviceCenter', label: 'Preferred digital center', type: 'text', required: false },
+      { name: 'notes', label: 'Service need details', type: 'textarea', required: false }
+    ]
+  },
+  23: {
+    detailedDescription: 'PM Surya Ghar: Muft Bijli Yojana provides rooftop solar subsidies to households to reduce electricity expenditure and promote clean energy. It helps families generate electricity from rooftop solar and adopt sustainable power solutions.',
+    howToApply: [
+      'Apply on the rooftop solar portal with household and electrical details.',
+      'Submit rooftop ownership, electricity bill and Aadhaar details.',
+      'Select an empanelled vendor and complete site verification.',
+      'Receive subsidy post installation and commissioning.'
+    ],
+    officialFormUrl: 'https://pmsuryaghar.gov.in/',
+    formFields: [
+      { name: 'applicantName', label: 'Household owner name', type: 'text', required: true },
+      { name: 'address', label: 'Address and rooftop details', type: 'textarea', required: true },
+      { name: 'electricityConsumer', label: 'Electricity consumer number', type: 'text', required: true },
+      { name: 'aadhaar', label: 'Aadhaar number', type: 'text', required: true },
+      { name: 'vendor', label: 'Preferred vendor / installer', type: 'text', required: true },
+      { name: 'bankAccount', label: 'Bank account details', type: 'text', required: true },
+      { name: 'notes', label: 'Solar installation requirements', type: 'textarea', required: false }
+    ]
+  },
+  24: {
+    detailedDescription: 'Sukanya Samriddhi Yojana is a long-term savings scheme aimed at the financial security of girl children. It offers attractive returns, deposit incentives and tax benefits to support education and marriage expenses.',
+    howToApply: [
+      'Open an account at the post office or bank branch.',
+      'Submit the girl child’s birth certificate and guardian details.',
+      'Complete KYC and address verification.',
+      'Continue deposits and monitor account growth over time.'
+    ],
+    officialFormUrl: 'https://www.sukanyasamriddhi.gov.in/',
+    formFields: [
+      { name: 'girlName', label: 'Girl child name', type: 'text', required: true },
+      { name: 'dob', label: 'Date of birth', type: 'date', required: true },
+      { name: 'guardianName', label: 'Guardian name', type: 'text', required: true },
+      { name: 'aadhaar', label: 'Guardian Aadhaar number', type: 'text', required: true },
+      { name: 'address', label: 'Address proof', type: 'textarea', required: true },
+      { name: 'bankBranch', label: 'Post office / bank branch', type: 'text', required: true },
+      { name: 'notes', label: 'Account and nominee details', type: 'textarea', required: false }
+    ]
+  },
+  25: {
+    detailedDescription: 'Beti Bachao Beti Padhao promotes gender equality and the survival, protection and education of girl children. It focuses on community awareness, welfare outreach and targeted support in priority districts.',
+    howToApply: [
+      'Register through the district administration or school / Anganwadi center.',
+      'Submit family and child details for support and awareness programs.',
+      'Participate in local campaigns and community programs.',
+      'Use available scholarships and support initiatives after verification.'
+    ],
+    officialFormUrl: 'https://betibachaobetipadhao.gov.in/',
+    formFields: [
+      { name: 'childName', label: 'Girl child name', type: 'text', required: true },
+      { name: 'dob', label: 'Date of birth', type: 'date', required: true },
+      { name: 'motherName', label: 'Mother name', type: 'text', required: true },
+      { name: 'address', label: 'Residential address', type: 'textarea', required: true },
+      { name: 'aadhaar', label: 'Family Aadhaar details', type: 'text', required: true },
+      { name: 'schoolName', label: 'School / Anganwadi center', type: 'text', required: true },
+      { name: 'notes', label: 'Support needs and remarks', type: 'textarea', required: false }
+    ]
+  },
+  26: {
+    detailedDescription: 'Mahila Samman Savings Certificate offers a government-backed savings option for women with assured returns and social-security benefits. It is intended to help women build financial discipline and savings habits.',
+    howToApply: [
+      'Visit the designated post office or bank branch.',
+      'Submit KYC and residence details as part of the account opening process.',
+      'Complete the certificate application form and nomination details.',
+      'Track certificate maturity and renewal details as required.'
+    ],
+    officialFormUrl: 'https://www.postoffice.gov.in/',
+    formFields: [
+      { name: 'beneficiaryName', label: 'Woman beneficiary name', type: 'text', required: true },
+      { name: 'dob', label: 'Date of birth', type: 'date', required: true },
+      { name: 'aadhaar', label: 'Aadhaar number', type: 'text', required: true },
+      { name: 'address', label: 'Address proof', type: 'textarea', required: true },
+      { name: 'bankBranch', label: 'Post office / bank branch', type: 'text', required: true },
+      { name: 'mobile', label: 'Mobile number', type: 'tel', required: true },
+      { name: 'notes', label: 'Nominee Information', type: 'textarea', required: false }
+    ]
+  },
+  27: {
+    detailedDescription: 'PMGDISHA promotes digital literacy in rural areas so citizens can access e-governance, online transactions and digital services. It focuses on women, youth and rural communities with limited digital access.',
+    howToApply: [
+      'Register through CSC or village service centres.',
+      'Submit identity and location details for training access.',
+      'Attend digital literacy classes and complete digital skills assessment.',
+      'Receive certification and support for digital access services.'
+    ],
+    officialFormUrl: 'https://www.pmgdisha.in/',
+    formFields: [
+      { name: 'citizenName', label: 'Applicant name', type: 'text', required: true },
+      { name: 'village', label: 'Village / district', type: 'text', required: true },
+      { name: 'ageGroup', label: 'Age group', type: 'select', required: true, options: ['15-25', '26-35', '36-45', '46+'] },
+      { name: 'aadhaar', label: 'Aadhaar number', type: 'text', required: true },
+      { name: 'mobile', label: 'Mobile number', type: 'tel', required: true },
+      { name: 'serviceCenter', label: 'Preferred training center', type: 'text', required: false },
+      { name: 'notes', label: 'Training need details', type: 'textarea', required: false }
+    ]
+  },
+  28: {
+    detailedDescription: 'The PM Laptop Distribution Scheme supports meritorious and economically weaker students by providing digital devices for learning and online education. It helps bridge the digital divide in rural and underserved communities.',
+    howToApply: [
+      'Apply through the school or state education portal.',
+      'Submit academic performance and household income documents.',
+      'Complete school verification and selection process.',
+      'Receive the laptop or tablet after approval and device distribution.'
+    ],
+    officialFormUrl: 'https://education.gov.in/',
+    formFields: [
+      { name: 'studentName', label: 'Student name', type: 'text', required: true },
+      { name: 'schoolName', label: 'School / college name', type: 'text', required: true },
+      { name: 'class', label: 'Class / course', type: 'text', required: true },
+      { name: 'aadhaar', label: 'Aadhaar number', type: 'text', required: true },
+      { name: 'marksheet', label: 'Latest mark sheet / result', type: 'text', required: true },
+      { name: 'incomeCertificate', label: 'Income certificate', type: 'text', required: true },
+      { name: 'notes', label: 'Need and academic details', type: 'textarea', required: false }
+    ]
+  },
+  29: {
+    detailedDescription: 'NRLM strengthens women-led self-help groups and rural livelihoods by promoting enterprise, financial literacy, livelihoods and capacity-building support. It helps rural households create sustainable income and resilience.',
+    howToApply: [
+      'Join or register with the SHG or block livelihood mission office.',
+      'Submit membership, identity and bank details.',
+      'Complete training and livelihood assessment.',
+      'Get support for enterprise development and credit linkage.'
+    ],
+    officialFormUrl: 'https://aajeevika.gov.in/',
+    formFields: [
+      { name: 'memberName', label: 'SHG member name', type: 'text', required: true },
+      { name: 'groupName', label: 'SHG / group name', type: 'text', required: true },
+      { name: 'village', label: 'Village / block', type: 'text', required: true },
+      { name: 'aadhaar', label: 'Aadhaar number', type: 'text', required: true },
+      { name: 'bankAccount', label: 'Bank account details', type: 'text', required: true },
+      { name: 'activity', label: 'Livelihood activity', type: 'text', required: true },
+      { name: 'notes', label: 'Self-help group and support details', type: 'textarea', required: false }
+    ]
+  },
+  30: {
+    detailedDescription: 'Pradhan Mantri Jan Arogya Suraksha focuses on hospital coverage and emergency care for vulnerable households. It aims to provide financial protection during health crises and reduce out-of-pocket treatment burden.',
+    howToApply: [
+      'Verify family eligibility and identity details.',
+      'Register on the official healthcare or hospital portal.',
+      'Submit family card and income verification documents.',
+      'Use the health cover at empanelled facilities during hospitalization.'
+    ],
+    officialFormUrl: 'https://abha.gov.in/',
+    formFields: [
+      { name: 'familyHead', label: 'Family head name', type: 'text', required: true },
+      { name: 'familyMembers', label: 'Family member count', type: 'text', required: true },
+      { name: 'aadhaar', label: 'Aadhaar number', type: 'text', required: true },
+      { name: 'incomeProof', label: 'Income / BPL proof', type: 'text', required: true },
+      { name: 'address', label: 'Address proof', type: 'textarea', required: true },
+      { name: 'hospital', label: 'Preferred hospital / district', type: 'text', required: false },
+      { name: 'notes', label: 'Health and emergency details', type: 'textarea', required: false }
+    ]
+  },
+  31: {
+    detailedDescription: 'PM Gati Shakti is a multi-modal infrastructure planning initiative that promotes integrated connectivity and logistics efficiency. It supports project execution across transport, industrial and social infrastructure sectors.',
+    howToApply: [
+      'Submit project proposal through the designated planning portal.',
+      'Attach land, financial and authority-related documents.',
+      'Complete project assessment and connectivity mapping.',
+      'Receive project support and implementation guidance after approval.'
+    ],
+    officialFormUrl: 'https://gati.shakti.gov.in/',
+    formFields: [
+      { name: 'projectName', label: 'Project name', type: 'text', required: true },
+      { name: 'agency', label: 'Implementing agency', type: 'text', required: true },
+      { name: 'district', label: 'District / region', type: 'text', required: true },
+      { name: 'projectType', label: 'Project type', type: 'select', required: true, options: ['Road', 'Logistics', 'Industrial', 'Urban Infrastructure', 'Other'] },
+      { name: 'landDocuments', label: 'Land and project documents', type: 'textarea', required: true },
+      { name: 'budget', label: 'Estimated project budget', type: 'text', required: true },
+      { name: 'notes', label: 'Project summary', type: 'textarea', required: false }
+    ]
+  },
+  32: {
+    detailedDescription: 'National Food Security Mission enhances production of major crops and assists farmers through better input support, technology and crop planning. It is aimed at improving food grain productivity and nutrient security.',
+    howToApply: [
+      'Register through the agriculture department or online farmer portal.',
+      'Submit land and crop details for identified districts.',
+      'Attach Aadhaar and bank record for support programs.',
+      'Receive input support and crop-related assistance after validation.'
+    ],
+    officialFormUrl: 'https://nfsm.gov.in/',
+    formFields: [
+      { name: 'farmerName', label: 'Farmer name', type: 'text', required: true },
+      { name: 'village', label: 'Village / district', type: 'text', required: true },
+      { name: 'cropName', label: 'Crop to be supported', type: 'text', required: true },
+      { name: 'landRecord', label: 'Land record / survey number', type: 'text', required: true },
+      { name: 'aadhaar', label: 'Aadhaar number', type: 'text', required: true },
+      { name: 'bankAccount', label: 'Bank account details', type: 'text', required: true },
+      { name: 'notes', label: 'Input support needs', type: 'textarea', required: false }
+    ]
+  },
+  33: {
+    detailedDescription: 'The Minor Irrigation scheme helps support water infrastructure and irrigation facilities in rural regions. It reduces water stress and improves crop yield in areas affected by erratic rainfall and low groundwater access.',
+    howToApply: [
+      'Submit village-level irrigation proposal at district agriculture office.',
+      'Attach land, water and bank details for feasibility review.',
+      'Complete project appraisal and technical validation.',
+      'Receive infrastructure support after sanctioning and implementation.'
+    ],
+    officialFormUrl: 'https://agricoop.nic.in/',
+    formFields: [
+      { name: 'farmerName', label: 'Applicant / farmer group name', type: 'text', required: true },
+      { name: 'village', label: 'Village / block', type: 'text', required: true },
+      { name: 'landArea', label: 'Irrigation area / land size', type: 'text', required: true },
+      { name: 'waterSource', label: 'Water source / irrigation need', type: 'text', required: true },
+      { name: 'aadhaar', label: 'Aadhaar number', type: 'text', required: true },
+      { name: 'bankAccount', label: 'Bank account details', type: 'text', required: true },
+      { name: 'notes', label: 'Project or irrigation requirement summary', type: 'textarea', required: false }
+    ]
+  },
+  34: {
+    detailedDescription: 'Rural Women SHG Support Program promotes self-help groups by providing training, credit linkage and entrepreneurship support. It helps rural women become financially independent and improve collective livelihood opportunities.',
+    howToApply: [
+      'Register the SHG at the block or livelihood mission office.',
+      'Submit group registration details and member Aadhaar records.',
+      'Complete training and livelihood assessment for credit support.',
+      'Receive funding and enterprise support based on group approval.'
+    ],
+    officialFormUrl: 'https://aajeevika.gov.in/',
+    formFields: [
+      { name: 'groupName', label: 'SHG name', type: 'text', required: true },
+      { name: 'leaderName', label: 'Group leader name', type: 'text', required: true },
+      { name: 'village', label: 'Village / block', type: 'text', required: true },
+      { name: 'membershipCount', label: 'Number of members', type: 'text', required: true },
+      { name: 'aadhaar', label: 'Member Aadhaar details', type: 'text', required: true },
+      { name: 'bankAccount', label: 'Group bank account details', type: 'text', required: true },
+      { name: 'notes', label: 'Group activity and support needs', type: 'textarea', required: false }
+    ]
+  },
+  35: {
+    detailedDescription: 'Skill India Mission offers vocational training, certification and career support to youth, women and unemployed adults. It strengthens employability and supports entrepreneurship in fast-growing sectors.',
+    howToApply: [
+      'Register on the Skill India portal or at the training center.',
+      'Submit educational and identity information.',
+      'Select a training course and complete the enrollment process.',
+      'Receive certification, placement support and follow-up guidance.'
+    ],
+    officialFormUrl: 'https://skillindia.gov.in/',
+    formFields: [
+      { name: 'candidateName', label: 'Candidate name', type: 'text', required: true },
+      { name: 'qualification', label: 'Educational qualification', type: 'text', required: true },
+      { name: 'trainingCourse', label: 'Preferred skill course', type: 'text', required: true },
+      { name: 'aadhaar', label: 'Aadhaar number', type: 'text', required: true },
+      { name: 'district', label: 'District / training center', type: 'text', required: true },
+      { name: 'mobile', label: 'Mobile number', type: 'tel', required: true },
+      { name: 'notes', label: 'Career and training details', type: 'textarea', required: false }
+    ]
+  }
+};
+
+Object.entries(schemeProfiles).forEach(([id, profile]) => {
+  const scheme = governmentSchemes.find((item) => item.id === Number(id));
+
+  if (!scheme) return;
+
+  Object.assign(scheme, {
+    detailedDescription: profile.detailedDescription || scheme.description,
+    howToApply: profile.howToApply || ['Visit the official portal', 'Verify eligibility', 'Submit necessary documents', 'Track application status'],
+    officialFormUrl: profile.officialFormUrl || scheme.officialWebsite,
+    formFields: profile.formFields || [
+      { name: 'fullName', label: 'Full name', type: 'text', required: true },
+      { name: 'mobile', label: 'Mobile number', type: 'tel', required: true },
+      { name: 'state', label: 'State', type: 'text', required: true },
+      { name: 'aadhaar', label: 'Aadhaar number', type: 'text', required: true },
+      { name: 'notes', label: 'Additional information', type: 'textarea', required: false }
+    ]
+  });
+});
