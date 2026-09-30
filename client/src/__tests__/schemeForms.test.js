@@ -2,6 +2,15 @@ import { governmentSchemes } from '../data/schemes';
 import { indianStates, indianUnionTerritories } from '../data/indianRegions';
 import { getDaysUntilRegistrationEnd } from '../components/RegistrationDeadlineNotice';
 import { findEligibleSchemes } from '../utils/eligibility';
+import {
+  buildSchemeAudioText,
+  findPreferredSpeechVoice,
+  getLanguageOption,
+  getSpeechLocale,
+  getSupportedLanguages,
+  getStoredLanguage,
+  normalizeLanguageCode
+} from '../utils/schemeAudio';
 
 describe('scheme form configuration', () => {
   it('provides scheme-specific application fields instead of a shared form', () => {
@@ -23,6 +32,65 @@ describe('Indian state selection options', () => {
     expect(new Set(indianStates).size).toBe(28);
     expect(indianUnionTerritories).toHaveLength(8);
     expect(new Set(indianUnionTerritories).size).toBe(8);
+  });
+});
+
+describe('scheme audio guide content', () => {
+  it('uses the selected language and includes scheme facts and fee disclosure', () => {
+    const text = buildSchemeAudioText({
+      schemeName: 'Test scheme',
+      description: 'Scheme description',
+      benefitLabel: 'Benefit',
+      benefit: 'A stated benefit',
+      eligibilityLabel: 'Eligibility',
+      eligibility: 'Eligible applicants',
+      howToApplyLabel: 'How to apply',
+      steps: ['Apply online', 'Track the application'],
+      documentsLabel: 'Documents',
+      documents: ['Identity proof'],
+      applicationFeeLabel: 'Application fee',
+      applicationFee: 'Not specified'
+    });
+
+    expect(getSpeechLocale('hi')).toBe('hi-IN');
+    expect(getSpeechLocale('te-IN')).toBe('te-IN');
+    expect(getSpeechLocale('kn')).toBe('kn-IN');
+    expect(getSpeechLocale('unknown')).toBe('en-IN');
+    expect(findPreferredSpeechVoice([
+      { lang: 'en-US' },
+      { lang: 'hi-IN' },
+      { lang: 'te-IN' }
+    ], 'hi')).toMatchObject({ lang: 'hi-IN' });
+    expect(findPreferredSpeechVoice([
+      { lang: 'en-US' },
+      { lang: 'te-IN' }
+    ], 'kn')).toEqual({ lang: 'en-US' });
+    expect(findPreferredSpeechVoice([
+      { lang: 'en-US' },
+      { lang: 'fr-FR' }
+    ], 'hi')).toEqual({ lang: 'en-US' });
+    expect(text).toContain('A stated benefit');
+    expect(text).toContain('Eligible applicants');
+    expect(text).toContain('1. Apply online 2. Track the application');
+    expect(text).toContain('Application fee: Not specified');
+    expect(text).not.toContain('Application mode');
+  });
+});
+
+describe('selected language and TTS mapping', () => {
+  it('keeps language selection and speech locale in sync for multi-language support', () => {
+    const languages = getSupportedLanguages();
+
+    expect(languages.map((language) => language.code)).toEqual(['en', 'te', 'hi', 'kn']);
+    expect(normalizeLanguageCode('te-IN')).toBe('te');
+    expect(normalizeLanguageCode('hi')).toBe('hi');
+    expect(getLanguageOption('te').locale).toBe('te-IN');
+    expect(getLanguageOption('hi').locale).toBe('hi-IN');
+    expect(getSpeechLocale('te')).toBe('te-IN');
+    expect(getSpeechLocale('hi-IN')).toBe('hi-IN');
+    expect(getSpeechLocale('kn')).toBe('kn-IN');
+    expect(getStoredLanguage('te')).toBe('te');
+    expect(getStoredLanguage('unknown')).toBe('en');
   });
 });
 

@@ -10,6 +10,7 @@ import EligibilityChecker from './pages/EligibilityChecker';
 import MyApplications from './pages/MyApplications';
 import SchemeDetails from './pages/SchemeDetails';
 import ApplicationForm from './pages/ApplicationForm';
+import { getStoredLanguage, LANGUAGE_STORAGE_KEY } from './utils/schemeAudio';
 import './App.css';
 
 function App() {
@@ -17,14 +18,19 @@ function App() {
   const isLoggedIn = false;
 
   const handleLanguageChange = (language) => {
-    i18n.changeLanguage(language);
+    const nextLanguage = getStoredLanguage(language, 'en');
+    i18n.changeLanguage(nextLanguage);
+
+    if (typeof window !== 'undefined') {
+      window.localStorage.setItem(LANGUAGE_STORAGE_KEY, nextLanguage);
+    }
   };
 
   return (
     <Router>
       <div className="App">
         <Navbar isLoggedIn={isLoggedIn} onLanguageChange={handleLanguageChange} currentLanguage={i18n.language} />
-        
+
         <main className="main-content">
           <Routes>
             <Route path="/" element={<Home />} />

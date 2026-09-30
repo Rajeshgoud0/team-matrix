@@ -152,6 +152,14 @@
     "documents": "Required documents",
     "applyNow": "Apply with demo form",
     "applicationMode": "Application mode",
+    "applicationFee": "Application fee",
+    "feeNotListed": "The available scheme information does not specify an application fee. Check the official website for current details.",
+    "listenAudio": "Listen to scheme details",
+    "pauseAudio": "Pause audio",
+    "resumeAudio": "Resume audio",
+    "stopAudio": "Stop audio",
+    "audioUnsupported": "Audio playback is not available in this browser.",
+    "voiceNotAvailable": "This device does not have a supported voice for the selected language, so the audio has been stopped.",
     "notFound": "Scheme not found."
   },
   "applicationForm": {

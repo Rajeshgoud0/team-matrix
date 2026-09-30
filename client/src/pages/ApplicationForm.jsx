@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { governmentSchemes } from '../data/schemes';
 
 function ApplicationForm() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const { schemeId } = useParams();
   const navigate = useNavigate();
   const scheme = governmentSchemes.find((item) => String(item.id) === schemeId);
@@ -30,7 +30,7 @@ function ApplicationForm() {
         label: t(`applicationForm.options.${option.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '')}`, option)
       }))
     }));
-  }, [scheme, t, i18n.language]);
+  }, [scheme, t]);
 
   if (!scheme) return <div className="container mx-auto py-12 px-4">{t('details.notFound')}</div>;
 
